@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="QuickWork.Views.Pages.Dashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:QuickWork.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpfui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="Dashboard"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Style="{StaticResource UiPageScrollable}"
+    mc:Ignorable="d">
+
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True">
+        <StackPanel>
+            <wpfui:CardAction Icon="Fluent24">
+                <StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,4"
+                        FontWeight="Medium"
+                        Text="What is this?" />
+                    <TextBlock
+                        FontSize="11"
+                        Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                        Text="This app is for work faster. open app, make an appointment, also email send and receive! This page will be overview." />
+                </StackPanel>
+            </wpfui:CardAction>
+            <StackPanel Margin="20" Orientation="Vertical">
+                <TextBlock FontFamily="Segoe UI Variable Display Semibold" FontSize="24" Text="Overview" HorizontalAlignment="Center"/>
+                <Grid Height="400" Margin="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Background="#4C2F2F2F">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="67*"/>
+                            <RowDefinition Height="13*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Margin="20">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock FontFamily="Segoe UI Variable Display Semibold" FontSize="20" HorizontalAlignment="Center" Text="What is my schedule?"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <wpfui:Button Content="Delete Schedule" Icon="BinFull24" IconFilled="True" FontFamily="Segoe UI Variable Display Semibold" />
+                                    <wpfui:Button Name="Showing" Content="Show me" HorizontalAlignment="Center" FontFamily="Segoe UI Variable Display Semibold" Margin="70,10,0,10" Click="Button_Click"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock FontFamily="Segoe UI Variable Display Semibold" FontSize="13" HorizontalAlignment="Center" Text="Date" Margin="30,0,40,0"/>
+                                    <TextBlock FontFamily="Segoe UI Variable Display Semibold" FontSize="13" HorizontalAlignment="Center" Text="Description" Margin="10,0,40,0"/>
+                                    <TextBlock FontFamily="Segoe UI Variable Display Semibold" FontSize="13" HorizontalAlignment="Center" Text="Name" Margin="0,0,30,0"/>
+                                </StackPanel>
+                                <ListView Name="schedulelist" HorizontalAlignment="Center">
+                                    
+                                </ListView>
+                                
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
